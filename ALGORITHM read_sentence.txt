@@ -1,0 +1,50 @@
+ALGORITHM read_sentence(S STRING)
+VAR 
+nbr_char     : INTEGER := 0;
+nbr_words  : INTEGER := 0;
+nbr_vowel  : INTEGER := 0;
+i : INTEGER;
+ 
+BEGIN
+ WHILE ( S.charAt(nbr_char) <> '.' ) DO
+ 
+ 
+ /*  Check if is a vowel   */
+   SWITCH (S.charAt(nbr_char)) DO
+    CASE 'a' :  nbr_vowel:= nbr_vowel +1;
+            BREAK; 
+    CASE 'e' : nbr_vowel:= nbr_vowel +1;
+	        BREAK; 
+	CASE 'i' :  nbr_vowel:= nbr_vowel +1;
+            BREAK; 
+    CASE 'u' : nbr_vowel:= nbr_vowel +1;
+	        BREAK; 
+    CASE 'o' : nbr_vowel:= nbr_vowel +1;
+	        BREAK; 
+	DEFAULT :    nbr_vowel:= nbr_vowel;
+END_SWITCH
+
+
+
+
+ /*  return number of char in this string S   */
+      IF  (S.charAt(nbr_char)<>' ') THEN
+        nbr_char :=nbr_char +1;
+      END_IF
+   
+   
+   
+ /*  return number of word in this string S   */
+   
+   IF  (S.charAt(nbr_char):=' ') THEN
+      nbr_words=nbr_words +1 ;
+   END_IF
+
+
+ 
+
+ END_WHILE
+ Write(nbr_char  );
+ Write(nbr_words );
+ Write(nbr_vowel );
+END
